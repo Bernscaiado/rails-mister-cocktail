@@ -1,22 +1,18 @@
 <div class="container">
   <h1>cocktails</h1>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+  <% @cocktails.each do |cocktail| %>
 
-    <tbody>
-      <% @cocktails.each do |cocktail| %>
-        <tr>
-          <td><%= link_to "#{cocktail.name}", cocktail %></td>
-                </tr>
-      <% end %>
-    </tbody>
-  </table>
+    <div class="card-product mt-3">
+      <img src="https://img.estadao.com.br/fotos/crop/1200x1200/resources/jpg/2/2/1528851153922.jpg" />
+      <div class="card-product-infos">
+        <h2><%= link_to "#{cocktail.name}", cocktail %></h2>
+      </div>
+    </div>
 
-  <%= link_to 'New cocktail', new_cocktail_path, class: 'btn btn-primary' %>
+  <% end %>
+
+
+
+  <%= link_to 'New cocktail', new_cocktail_path, class: 'btn btn-primary mt-3' %>
 </div>
