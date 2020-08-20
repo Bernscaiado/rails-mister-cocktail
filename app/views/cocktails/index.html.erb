@@ -1,22 +1,22 @@
+<div class="container">
+  <h1>cocktails</h1>
 
-<h1>cocktails</h1>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cocktails.each do |cocktail| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= link_to "#{cocktail.name}", cocktail %></td>
-        <td><%= cocktail.name %></td>
-              </tr>
-    <% end %>
-  </tbody>
-</table>
+        <th>Name</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-<%= link_to 'New cocktail', new_cocktail_path, class: 'btn btn-primary' %>
+    <tbody>
+      <% @cocktails.each do |cocktail| %>
+        <tr>
+          <td><%= link_to "#{cocktail.name}", cocktail %></td>
+                </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to 'New cocktail', new_cocktail_path, class: 'btn btn-primary' %>
+</div>

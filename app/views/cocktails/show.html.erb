@@ -1,43 +1,37 @@
-
-<div class="card">
-  <div class="body">
-    <h2 class="text-center"><%= @cocktail.name %></h2>
-    <table class="table">
-      <thead>
-        <tr>
-          <th><%= @cocktail.name %></th>
-        </tr>
-      </thead>
-    </table>
+<div class="container mt-5">
+  <div class="card">
+    <div class="body">
+      <h2 class="text-center"><%= @cocktail.name %></h2>
 
 
-    <table class="table flex">
-      <thead>
-        <tr>
-          <th>Dose</th>
-          <th>Ingredient</th>
-        </tr>
-      </thead>
 
-      <tbody>
-        <% @cocktail.doses.each do |dose| %>
+      <table class="table flex">
+        <thead>
           <tr>
-            <td><%= dose.description %></td>
-            <td><%= dose.ingredient.name %></td>
+            <th>Dose</th>
+            <th>Ingredient</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
 
-    <div>
-      <p>
-        <%= link_to 'Add dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-success d-flex justify-content-center' %>
-      </p>
+        <tbody>
+          <% @cocktail.doses.each do |dose| %>
+            <tr>
+              <td><%= dose.description %></td>
+              <td><%= dose.ingredient.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-      <p>
-        <%= link_to 'Back', cocktails_path, class: 'btn btn-primary d-flex justify-content-center' %>
-      </p>
+      <div>
+        <p>
+          <%= link_to 'Add dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-success d-flex justify-content-center' %>
+        </p>
+
+        <p>
+          <%= link_to 'Back', cocktails_path, class: 'btn btn-primary d-flex justify-content-center' %>
+        </p>
+      </div>
     </div>
   </div>
 </div>
-
