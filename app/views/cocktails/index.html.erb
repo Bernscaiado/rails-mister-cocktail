@@ -4,7 +4,11 @@
   <% @cocktails.each do |cocktail| %>
 
     <div class="card-product mt-3">
-      <img src="https://img.estadao.com.br/fotos/crop/1200x1200/resources/jpg/2/2/1528851153922.jpg" />
+      <% if cocktail.photo.attached? %>
+      <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <img src="https://img.estadao.com.br/fotos/crop/1200x1200/resources/jpg/2/2/1528851153922.jpg" />
+      <% end %>
       <div class="card-product-infos">
         <h2><%= link_to "#{cocktail.name}", cocktail %></h2>
       </div>
